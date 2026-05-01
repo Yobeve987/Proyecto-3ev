@@ -9,7 +9,6 @@ CREATE TABLE productos (
     modelo VARCHAR(50) NULL, --
     garantia VARCHAR(5), --
     talla VARCHAR(30), --
-    color VARCHAR(30), --
     material VARCHAR(30), --
     genero VARCHAR(30),
     descripcion VARCHAR(200) --
