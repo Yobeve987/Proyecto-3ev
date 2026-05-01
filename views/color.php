@@ -13,8 +13,7 @@
     <form method="POST" action="index.php?accion=cambiarColor">
         <label>Selecciona un color:</label><br><br>
 
-        <input type="color" name="color" 
-               value="<?= $_SESSION['fondo'] ?? '#ffffff' ?>"
+        <input type="color" name="color" value="<?= $_SESSION['fondo'] ?? '#ffffff' ?>"
                style="width: 80px; height: 40px; cursor: pointer;">
 
         <br><br>
@@ -24,5 +23,5 @@
     <br>
     <a href="index.php">Volver al inicio</a>
 
-</body>
+</body> 
 </html>

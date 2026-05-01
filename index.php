@@ -17,6 +17,7 @@ if (!isset($_SESSION['usuario_id']) && isset($_COOKIE['usuario_login'])) {
     if ($usuario) {
         $_SESSION['usuario_id'] = $usuario->getId();
         $_SESSION['usuarioEmail'] = $usuario->getEmail();
+        $_SESSION['fondo'] = $usuario->getFondo();
     } else {
 
         setcookie('usuario_login', '', time() - 3600, '/');
@@ -28,19 +29,31 @@ switch ($accion) {
     case 'login':
         $usuarioController->login();
         break;
+
     case 'alta':
         $usuarioController->alta();
         break;
+
     case 'logout':
         $usuarioController->logout();
         break;
-    case 'cambiarColor':
+
+    case 'color': 
         if (!isset($_SESSION['usuario_id'])) {
-        header('Location: index.php?accion=login');
-        exit;
-    }
-    $usuarioController->cambiarColor();
-    break;
+            header('Location: index.php?accion=login');
+            exit;
+        }
+        include "views/color.php";
+        break;
+
+    case 'cambiarColor': 
+        if (!isset($_SESSION['usuario_id'])) {
+            header('Location: index.php?accion=login');
+            exit;
+        }
+        $usuarioController->cambiarColor();
+        break;
+
     case 'crear':
     case 'editar':
     case 'eliminar':
@@ -52,6 +65,7 @@ switch ($accion) {
         if ($accion === 'editar') $controller->editar();
         if ($accion === 'eliminar') $controller->eliminar();
         break;
+
     default:
         $controller->index();
 }

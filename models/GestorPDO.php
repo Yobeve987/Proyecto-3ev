@@ -136,7 +136,7 @@ class GestorPDO{
         $value = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($value) {
-            return new Usuario($value['email'], $value['password'], $value['fondo'], $value['id']);
+            return new Usuario($value['email'], $value['password'], $value['id'], $value['fondo']);
         }
         return false;
     }

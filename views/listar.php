@@ -22,6 +22,7 @@
     </div>
 
     <a href="index.php?accion=crear">Agregar Producto</a><p>
+    <a href="index.php?accion=color">Cambiar color de fondo</a>
     
     <table border="1" cellpadding="10">
         <tr>

@@ -64,21 +64,22 @@ class UsuarioController {
     }
 
     public function cambiarColor() {
-    if (!isset($_SESSION['usuario_id'])) {
-        header("Location: index.php?accion=login");
+        if (!isset($_SESSION['usuario_id'])) {
+            header("Location: index.php?accion=login");
+            exit;
+        }
+
+        $id = $_SESSION['usuario_id'];
+        $color = $_POST['color'];
+
+        $this->gestor->actualizarColorUsuario($id, $color);
+
+        $_SESSION['fondo'] = $color;
+
+        header("Location: index.php");
         exit;
-    }
+    }   
 
-    $id = $_SESSION['usuario_id'];
-    $color = $_POST['color'];
-
-    $this->gestor->actualizarColorUsuario($id, $color);
-
-    $_SESSION['fondo'] = $color;
-
-    header("Location: index.php");
-    exit;
-}
 
     
     public function logout() {
