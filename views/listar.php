@@ -3,6 +3,11 @@
 <head>
     <title>Productos</title>
 </head>
+    <style>
+        .stockalto { background-color: #c8f7c5; } 
+        .stockmedio { background-color: #ffd59e; } 
+        .stockcero { background-color: #f7c5c5; } 
+    </style>
 <body>
     <h1>Lista de Productos</h1>
 
@@ -43,7 +48,11 @@
             <td><?= ($p instanceof electronica) ? "electronica" : "textil"; ?></td>
             <td><?= $p->getnombre() ?></td>
             <td><?= $p->getprecio() ?></td>
-            <td><?= $p->getstock() ?></td>
+            <?php
+                $stock = (int) $p->getstock();
+                $stockClass = $stock === 0 ? 'stockcero' : ($stock < 5 ? 'stockmedio' : 'stockalto');
+            ?>
+            <td class="<?= $stockClass ?>"><?= $stock ?></td>
             <td><?= $p->getdescripcion() ?></td>
             <td><?= ($p instanceof electronica) ? $p->getmarca() : "--"; ?></td>
             <td><?= ($p instanceof electronica) ? $p->getmodelo() : "--"; ?></td>
