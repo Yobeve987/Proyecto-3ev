@@ -5,7 +5,7 @@ CREATE TABLE productos (
     tipoProd ENUM('electronica', 'textil') NOT NULL, --
     nombre VARCHAR(100), --
     precio DECIMAL(10,2), --
-    stock INT), --
+    stock INT, --
     marca VARCHAR (50), --
     modelo VARCHAR(50) NULL, --
     garantia VARCHAR(5), --

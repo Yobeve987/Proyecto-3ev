@@ -18,6 +18,6 @@ class electronica extends producto {
     public function setmodelo($modelo){$this->modelo = $modelo;return $this;}
 
     public function getgarantia(){return $this->garantia;}
-    public function setgarantia($garantia){return $this->garantia = $garantia return $this;}
+    public function setgarantia($garantia){$this->garantia = $garantia; return $this;}
 }
 ?>
