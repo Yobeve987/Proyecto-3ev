@@ -17,7 +17,7 @@
         <input type="number" name="stock" value="<?= $producto->getstock() ?>" required><br><br>
 
         Descripción:<br>
-         <input type="text" name="descripcion" value="<?= $producto->getdescripcion()) ?>" required><br><br>
+         <input type="text" name="descripcion" value="<?= $producto->getdescripcion() ?>" required><br><br>
 
         <?php if ($producto instanceof electronica): ?>
             Marca:<br>

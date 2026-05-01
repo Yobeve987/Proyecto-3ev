@@ -74,7 +74,7 @@ class GestorPDO{
     public function actualizar($producto) {
         try {
             if ($producto instanceof electronica){
-                $sql="UPDATE productos SET tipoProd=:tipoProd, nombre=:nombre, precio=:precio, stock=:stock, descripcion=:descripcion, marca=:marca, modelo=:modelo, garantia=:garantia, WHERE id = :id";
+                $sql="UPDATE productos SET tipoProd=:tipoProd, nombre=:nombre, precio=:precio, stock=:stock, descripcion=:descripcion, marca=:marca, modelo=:modelo, garantia=:garantia WHERE id = :id";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindValue(':id', $producto->getId());
                 $stmt->bindValue(':tipoProd', "electronica");
@@ -86,7 +86,7 @@ class GestorPDO{
                 $stmt->bindValue(':modelo', $producto->getmodelo());
                 $stmt->bindValue(':garantia', $producto->getgarantia());
             }else{
-                $sql="UPDATE productos SET tipoProd=:tipoProd, nombre=:nombre, precio=:precio, stock=:stock, descripcion=:descripcion, talla=:talla, material=:material, genero=:genero, WHERE id = :id";
+                $sql="UPDATE productos SET tipoProd=:tipoProd, nombre=:nombre, precio=:precio, stock=:stock, descripcion=:descripcion, talla=:talla, material=:material, genero=:genero WHERE id = :id";
                 $stmt = $this->db->prepare($sql);
                 $stmt->bindValue(':id', $producto->getId());
                 $stmt->bindValue(':tipoProd', "textil");
@@ -95,7 +95,7 @@ class GestorPDO{
                 $stmt->bindValue(':stock', $producto->getstock());
                 $stmt->bindValue(':descripcion', $producto->getdescripcion());
                 $stmt->bindValue(':talla', $producto->gettalla());
-                $stmt->bindValue(':material', $producto->getmeterial());
+                $stmt->bindValue(':material', $producto->getmaterial());
                 $stmt->bindValue(':genero', $producto->getgenero());
             } 
             return $stmt->execute(); 

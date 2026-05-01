@@ -15,7 +15,7 @@
         Nombre:<br>
         <input type="text" name="nombre" required><br><br>
         Precio:<br>
-        <input type="number" name="Precio" required><br><br>
+        <input type="number" name="precio" required><br><br>
         Stock:<br>
         <input type="number" name="stock" required><br><br>
         Descripción:<br>
@@ -27,7 +27,7 @@
         Garantia:<br>
         <input type="text" name="garantia"><br><br>
         Talla:<br>
-        <input type="number" name="cilindrada"><br><br>
+        <input type="number" name="talla"><br><br>
         Material:<br>
         <input type="text" name="material"><br><br>
         Genero:<br>

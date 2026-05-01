@@ -4,7 +4,7 @@ CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY, --
     tipoProd ENUM('electronica', 'textil') NOT NULL, --
     nombre VARCHAR(100), --
-    precio DECIMAL(10,2), --
+    precio DECIMAL(100,2), --
     stock INT, --
     marca VARCHAR (50), --
     modelo VARCHAR(50) NULL, --

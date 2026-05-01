@@ -17,7 +17,7 @@ class ProductosController {
         if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $tipo = $_POST['tipo'];
             $nombre = $_POST['nombre'];
-            $precio = $_POST['precio'];
+            $precio = $_POST['precio']; 
             $stock = $_POST['stock'];
             $descripcion = $_POST['descripcion'];
             if ($_POST['tipo']=="electronica"){
