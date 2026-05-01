@@ -26,7 +26,7 @@ class producto {
     public function getstock(){return $this->stock;}
     public function setstock($stock){$this->stock = $stock; return $this;}
 
-    public function getdescripcion(){return $this->descripcion;
+    public function getdescripcion(){return $this->descripcion;}
     public function setdescripcion($descripcion){$this->descripcion = $descripcion; return $this;}
 }
 ?>

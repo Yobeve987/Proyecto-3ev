@@ -1,5 +1,5 @@
 <?php
-class Motocicleta extends Vehiculo {
+class textil extends producto {
     private $talla;
     private $material;
     private $genero;

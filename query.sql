@@ -2,6 +2,7 @@ CREATE DATABASE proyecto;
 USE proyecto;
 CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY, --
+    tipoProd ENUM('electronica', 'textil') NOT NULL, --
     nombre VARCHAR(100), --
     precio DECIMAL(10,2), --
     stock INT), --
