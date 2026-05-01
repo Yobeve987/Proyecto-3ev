@@ -34,6 +34,13 @@ switch ($accion) {
     case 'logout':
         $usuarioController->logout();
         break;
+    case 'cambiarColor':
+        if (!isset($_SESSION['usuario_id'])) {
+        header('Location: index.php?accion=login');
+        exit;
+    }
+    $usuarioController->cambiarColor();
+    break;
     case 'crear':
     case 'editar':
     case 'eliminar':

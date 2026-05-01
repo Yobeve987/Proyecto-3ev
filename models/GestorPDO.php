@@ -136,8 +136,17 @@ class GestorPDO{
         $value = $stmt->fetch(PDO::FETCH_ASSOC);
         
         if ($value) {
-            return new Usuario($value['email'], $value['password'], $value['id']);
+            return new Usuario($value['email'], $value['password'], $value['fondo'], $value['id']);
         }
         return false;
     }
+
+    public function actualizarColorUsuario($id, $color) {
+        $sql = "UPDATE Usuario SET fondo = :fondo WHERE id = :id";
+        $stmt = $this->db->prepare($sql);
+        $stmt->bindValue(':fondo', $color);
+        $stmt->bindValue(':id', $id);
+        return $stmt->execute();
+    }
+
 }

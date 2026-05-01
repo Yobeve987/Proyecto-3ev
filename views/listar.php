@@ -8,7 +8,7 @@
         .stockmedio { background-color: #ffd59e; } 
         .stockcero { background-color: #f7c5c5; } 
     </style>
-<body>
+<body style="background-color: <?= $_SESSION['fondo'] ?? 'white' ?>;">
     <h1>Lista de Productos</h1>
 
     <div style="background-color: #f0f0f0; padding: 10px; margin-bottom: 20px;">

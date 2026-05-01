@@ -35,6 +35,8 @@ class UsuarioController {
                 
                 $_SESSION['usuario_id'] = $usuario->getId();
                 $_SESSION['usuarioEmail'] = $usuario->getEmail(); 
+                $_SESSION['fondo'] = $usuario->getFondo();
+
 
                 if ($recordar) {
                     $token = base64_encode($usuario->getEmail()); 
@@ -61,6 +63,24 @@ class UsuarioController {
         include "views/login.php";
     }
 
+    public function cambiarColor() {
+    if (!isset($_SESSION['usuario_id'])) {
+        header("Location: index.php?accion=login");
+        exit;
+    }
+
+    $id = $_SESSION['usuario_id'];
+    $color = $_POST['color'];
+
+    $this->gestor->actualizarColorUsuario($id, $color);
+
+    $_SESSION['fondo'] = $color;
+
+    header("Location: index.php");
+    exit;
+}
+
+    
     public function logout() {
         $_SESSION = [];
                 session_destroy();

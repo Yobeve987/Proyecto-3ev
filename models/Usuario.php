@@ -3,6 +3,7 @@ class Usuario{
     private $id;
     private $email;
     private $password;
+    private $fondo;
 
     public function __construct($email, $password, $id=0){
         $this->id=$id;
@@ -18,4 +19,8 @@ class Usuario{
 
     public function getPassword(){return $this->password;}
     public function setPassword($password){$this->password = $password;return $this;}
+
+    public function getFondo(){ return $this->fondo;}
+    public function setFondo($fondo){ $this->fondo = $fondo; return $this;}
+
 }
