@@ -114,14 +114,14 @@ class GestorPDO{
 
     public function registrarUsuario(Usuario $usuario) {
         try {
-            $sql = "INSERT INTO Usuario (email, password) VALUES (:email, :password)";
+            $sql = "INSERT INTO Usuario (email, password, fondo) VALUES (:email, :password, :fondo)";
             $stmt = $this->db->prepare($sql);
 
             $stmt->bindValue(':email', $usuario->getEmail());
             $stmt->bindValue(':password', $usuario->getPassword());
+            $stmt->bindValue(':fondo', '#ffffff'); // color por defecto
 
             return $stmt->execute(); 
-            
         } catch (PDOException $e) {
             echo $e->getMessage() . $e->getCode();
         }
